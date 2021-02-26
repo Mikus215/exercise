@@ -4,6 +4,7 @@ import {About,Description,Image,Hide} from '../styles';
 import {motion} from 'framer-motion';
 import {titleAni,fade,photo} from '../animation';
 import {Link} from 'react-router-dom';
+import Wave from './Wave';
 
 const AboutSection = () => {
     return ( 
@@ -20,6 +21,7 @@ const AboutSection = () => {
             <Image>
                 <motion.img variants={photo} src={home1} alt="guy with camera"/>
             </Image>
+            <Wave/>
         </About>
      );
 }
