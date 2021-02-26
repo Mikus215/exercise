@@ -58,7 +58,21 @@ export const photo={
         transition:{
             duration: .75,
             ease: 'easeOut',
+            delay: 1.2
         }
 
+    }
+}
+
+export const lineAn={
+    hidden: {
+        width: '0%'
+    },
+    show: {
+        width: '100%',
+        transition: {
+            duration: 1,
+            ease: 'easeOut',
+        }
     }
 }

@@ -5,30 +5,36 @@ import theracer from '../img/theracer-small.png';
 import goodtimes from '../img/goodtimes-small.png';
 import {Link} from 'react-router-dom';
 import {motion} from 'framer-motion';
-import {pageAnimation} from '../animation';
+import {pageAnimation,photo,fade,lineAn} from '../animation';
 
 const OurWork = () => {
     return ( 
         <Work exit='exit' variants={pageAnimation} initial='hidden' animate='show'>
             <Movie>
-                <h2>The Athlete</h2>
-                <div className="line"></div>
+                <motion.h2 variants={fade}>The Athlete</motion.h2>
+                <motion.div variants={lineAn} className="line"></motion.div>
                 <Link to="/work/the-athlete">
-                <img src={athlete} alt=""/>
+                    <Hide>
+                <motion.img variants={photo} src={athlete} alt=""/>
+                    </Hide>
                 </Link>
             </Movie>
             <Movie>
-                <h2>The Racer</h2>
-                <div className="line"></div>
+                <motion.h2 variants={fade}>The Racer</motion.h2>
+                <motion.div variants={lineAn} className="line"></motion.div>
                 <Link to="/work/the-racer">
-                <img src={theracer} alt=""/>
+                    <Hide>
+                <motion.img variants={photo} src={theracer} alt=""/>
+                    </Hide>
                 </Link>
             </Movie>
             <Movie>
-                <h2>Good Times</h2>
-                <div className="line"></div>
+                <motion.h2 variants={fade}>Good Times</motion.h2>
+                <motion.div variants={lineAn} className="line"></motion.div>
                 <Link to="/work/good-times">
-                <img src={goodtimes} alt=""/>
+                    <Hide>
+                <motion.img variants={photo} src={goodtimes} alt=""/>
+                    </Hide>
                 </Link>
             </Movie>
         </Work>
@@ -41,13 +47,14 @@ overflow: hidden;
 padding: 5rem 10rem;
 h2{
     padding: 1rem 0rem;
+    color: white;
 }
 `;
 const Movie=styled.div`
 padding-bottom: 10rem;
 .line{
     height: 0.5rem;
-    background: #cccccc;
+    background: #23d997;
     margin-bottom: 3rem;
 }
 img{
@@ -55,6 +62,9 @@ img{
     height: 70vh;
     object-fit: cover;
 }
+`;
+const Hide=styled.div`
+overflow: hidden;
 `;
  
 export default OurWork;
